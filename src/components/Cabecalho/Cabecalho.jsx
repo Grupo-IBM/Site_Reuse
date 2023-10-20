@@ -5,7 +5,7 @@ export default function Cabecalho(){
     return (
         <>
             <header>
-                <div className="container">
+                <div className="cabeca">
                     <nav className="navbar-items">
                         <img src={logo}/>
                         <ul>

@@ -1,7 +1,12 @@
+import Rodape from "../components/Rodape/Rodape"
+import Logo from "../components/Logo/Logo"
+import CadastroForm from "../components/CadastroForm/CadastroForm"
 export default function Cadastro(){
     return(
-        <>
-            <h1>Cadastro</h1>
+        <>  
+            <Logo/>
+            <CadastroForm/>
+            <Rodape/>
         </>
     )
 }
