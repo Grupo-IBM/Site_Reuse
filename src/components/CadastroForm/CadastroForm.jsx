@@ -2,7 +2,7 @@ import  { useState } from "react";
 import { useForm } from "react-hook-form";
 import { isEmail } from "validator";
 import { Modal ,Button} from "react-bootstrap";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Pmodal, PSub } from "./Cadastro.styles";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CadastroForm.scss";
@@ -176,6 +176,8 @@ const CadastroForm = () => {
               </div>
               <div className="form-control">
                 <button onClick={handleSubmit(onSubmit)}>Criar conta</button>
+                <p><Link to="/" className="LinkBack">Voltar a home</Link></p>
+
               </div>
             </div>
           </div>

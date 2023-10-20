@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Modal ,Button} from "react-bootstrap";
 import { Pmodal } from "./Login.styles";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -62,6 +62,7 @@ export default function LoginPage() {
 
               <div className="form-control">
                 <button type="submit">Fazer Login</button>
+                <p><Link to="/cadastro" className="LinkBack">Voltar ao cadastro</Link></p>
               </div>
             </form>
           </div>
