@@ -49,15 +49,17 @@ const CadastroForm = () => {
         });
   
         if (response.status === 201) {
-          const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-          const updatedUsers = [...storedUsers, data];
-          localStorage.setItem("users", JSON.stringify(updatedUsers));
+          const userData = JSON.parse(localStorage.getItem("userData")) || [];
+          userData.push(data);
+          localStorage.setItem("userData", JSON.stringify(userData));
+  
           reset({
             name: "",
             email: "",
             password: "",
             passwordConfirmation: "",
           });
+  
           setShowModal(true); // Show the success modal
         } else {
           console.error("Erro ao cadastrar o usuário na API.");
@@ -67,6 +69,7 @@ const CadastroForm = () => {
       }
     }
   };
+  
   
 
   const hideModal = () => {
