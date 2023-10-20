@@ -8,7 +8,7 @@ Para iniciar o projeto é importante que tenham as seguintes ferramentas instala
 
 Ao instalar as duas ferramentas, você já está apto a seguir com a instalação de qualquer projeto. Para os próximos passos você precisa de algum terminal com linha de comando:
 
-1. Clone o repositório: https://github.com/EnzoShiotuqui/Site_Reuse.git
+1. Clone o repositório:  https://github.com/EnzoShiotuqui/Site_Reuse.git
 
 2. Vá até a pasta que você acabou de clonar e utilize os comandos para instalar as dependências necessárias para o funcionamento de cada pasta:
 
