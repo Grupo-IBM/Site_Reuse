@@ -1,10 +1,11 @@
 
 import "./App.module.scss"
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
-       <h1>Olá react</h1>
+       <Outlet/>
     </>
   )
 }
