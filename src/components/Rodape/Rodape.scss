@@ -1,0 +1,121 @@
+@import url(../../App.module.scss);
+
+.footer-container{
+width: 100%;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap:50px;
+justify-content: space-around;
+border-top: 3px solid var(--green-dark)
+}
+
+
+.mapa{
+    margin-left: 15px;
+    margin-top: 43px;
+}
+.mapa_img{
+    width: 450px;
+}
+
+// REDES
+.redes{
+    margin-top: 22px;
+    list-style: none;
+    line-height: 90px;
+}
+.redes a{
+    text-decoration: none;
+    color: var(--green-dark);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.redes p{
+    color: var(--green-dark) ;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.redes li{
+    list-style: none;
+    line-height: 80px;
+}
+
+
+.contato p{
+    margin-top: 25px;
+    color: var(--green-dark);
+    line-height: 60px;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+@media (max-width: 1200px) {
+    .footer-container{
+      display: flex;
+      flex-direction: column;
+    }
+    .mapa{
+      margin: 0 auto
+    }
+    
+    .redes{
+      margin: 0 auto;
+    }
+
+    .contato{
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+
+  /* tablet 900px */
+  @media (max-width: 900px) {
+    .footer-container{
+      display: flex;
+      flex-direction: column;
+    }
+    .mapa{
+      margin: 0 auto
+    }
+    
+    .redes{
+      margin: 0 auto;
+    }
+
+    .contato{
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+  
+  
+  /* celular 576px */
+  @media (max-width: 576px) {
+    .footer-container{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tudo {
+        overflow-x: hidden;
+      }
+    .mapa{
+      margin: 0 auto
+    }
+    .mapa img{
+        width: 100%;
+    }
+    .redes{
+      margin: 0 auto;
+    }
+
+    .contato{
+      text-align: center;
+      font-size: 12px;
+    }
+  }
