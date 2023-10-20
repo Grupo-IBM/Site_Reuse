@@ -2,7 +2,7 @@ import  { useState } from "react";
 import { useForm } from "react-hook-form";
 import { isEmail } from "validator";
 import { Modal ,Button} from "react-bootstrap";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Pmodal, PSub } from "./Cadastro.styles";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CadastroForm.scss";
@@ -49,15 +49,17 @@ const CadastroForm = () => {
         });
   
         if (response.status === 201) {
-          const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-          const updatedUsers = [...storedUsers, data];
-          localStorage.setItem("users", JSON.stringify(updatedUsers));
+          const userData = JSON.parse(localStorage.getItem("userData")) || [];
+          userData.push(data);
+          localStorage.setItem("userData", JSON.stringify(userData));
+  
           reset({
             name: "",
             email: "",
             password: "",
             passwordConfirmation: "",
           });
+  
           setShowModal(true); // Show the success modal
         } else {
           console.error("Erro ao cadastrar o usuário na API.");
@@ -67,6 +69,7 @@ const CadastroForm = () => {
       }
     }
   };
+  
   
 
   const hideModal = () => {
@@ -173,6 +176,8 @@ const CadastroForm = () => {
               </div>
               <div className="form-control">
                 <button onClick={handleSubmit(onSubmit)}>Criar conta</button>
+                <p><Link to="/" className="LinkBack">Voltar a home</Link></p>
+
               </div>
             </div>
           </div>
