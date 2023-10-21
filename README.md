@@ -12,22 +12,22 @@ Ao instalar as duas ferramentas, você já está apto a seguir com a instalaçã
 1. Clone o repositório:  https://github.com/EnzoShiotuqui/Site_Reuse.git
 
 2. Vá até a pasta que você acabou de clonar e utilize os comandos para instalar as dependências necessárias para o funcionamento de cada pasta:
-
+```
     cd .\nome-da-pasta-em-que-clono\    
      cd .\Site-Reuse\
       npm install
-
+```
 (Lembrando que esses passos são para o funcionamento do site em React, o site em html é apenas roda-lo)
 
 
 4. Com a pasta "node-modules" criada basta rodar o projeto com o seguinte comando
-
-        npm run dev
-
+```
+npm run dev
+```
 este comando roda apenas o site, porém agora é preciso rodar a API, que carrega os dados, para isso basta executar
-
-    npm run x
-
+```
+npm run x
+```    
 Prontinho, caso esteja tudo certo o terminal ira mostrar uma mensagem com o link, basta acessar e desfrutar do site :)
 
 ## Estrutura do Projeto:
