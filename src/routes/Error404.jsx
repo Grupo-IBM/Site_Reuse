@@ -1,6 +1,5 @@
-import "./Error.scss"
+import "../assets/scss/Error.scss"
 import { Link } from "react-router-dom";
-import Rodape from '../components/Rodape/Rodape'
 export default function Erro404() {
     return (
       <>
@@ -22,9 +21,6 @@ export default function Erro404() {
 </a>
 </div>
 <br/>
-<Rodape/>
-
-
       </>
     )
   }

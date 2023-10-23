@@ -1,33 +1,22 @@
 @import url(../../App.module.scss);
-
-
   /* MAIN */
-.banner{
-  background-image: url("../../assets/mar.png");
-  background-size: cover;
-  background-position: center;
-  padding: 10rem 0;
+  .banner{
+    background-image: url("../img/mar.png");
+    background-size: cover;
+    background-position: center;
+    padding: 10rem 0;
+  }
+
+.modalTitle{
+    font-size: 15px;
+    color: var(--green-dark);
 }
 
-.LinkBack{
-  text-decoration: none;
-  font-size: 24px;
-  color:var(--black);
-  transition: .4s;
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.LinkBack:hover{
-  color: var(--green-hover);
-}
-
-.container {
+.Containerr {
   margin: 0 auto;
   background-color: #fff;
   border-radius: 5px;
-  border: 2px solid var(--black);
+  border: 2px solid var(--green-dark);
   width: 450px;
   max-width: 100%;
 }
@@ -125,6 +114,11 @@ margin-top: 10px;
     margin-top: 8px;
   }
   
+  .page-exit {
+    opacity: 0;
+    transform: translateY(-20px); /* Ou qualquer outra transformação desejada */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
   .form-control select {
     padding: 12px;
     border: none;
@@ -138,16 +132,11 @@ margin-top: 10px;
     appearance: none;
   }
   
-  .voltar{
-    color: var(--black);
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-  }
- 
+.error-message{
+  color: rgb(141, 20, 20);
+  font-size: 15px;
+}
+
     /* celular 576px */
     @media (max-width: 576px) {
       .container{
@@ -185,3 +174,4 @@ margin-top: 10px;
         width: 90%;
       }
     }
+

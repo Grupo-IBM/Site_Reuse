@@ -1,7 +1,7 @@
 import "./Rodape.scss"
-import mapa from "../../assets/Mapa.png"
-import Insta from "../../assets/image.png"
-import Linkedin from "../../assets/linkedin.png"
+import mapa from "../../assets/img/Mapa.png"
+import Insta from "../../assets/img/image.png"
+import Linkedin from "../../assets/img/linkedin.png"
 export default function Rodape(){
     const list = [
         {
