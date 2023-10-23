@@ -6,6 +6,27 @@
       "password": "123456",
       "passwordConfirmation": "123456",
       "id": 1
+    },
+    {
+      "name": "enzo ",
+      "email": "enzomshiotuqui@gmail.com",
+      "password": "123456",
+      "passwordConfirmation": "123456",
+      "id": 2
+    },
+    {
+      "name": "enzo ",
+      "email": "e@gmail.com",
+      "password": "123456",
+      "passwordConfirmation": "123456",
+      "id": 3
+    },
+    {
+      "name": "enzo ",
+      "email": "a@gmail.com",
+      "password": "123456",
+      "passwordConfirmation": "123456",
+      "id": 4
     }
   ]
 }

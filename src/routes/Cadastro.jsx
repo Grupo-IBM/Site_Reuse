@@ -1,12 +1,11 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { isEmail } from "validator";
-import { Modal ,Button} from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/scss/CadastroForm.scss";
-
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Pmodall = styled.p`
     font-size:25px;
@@ -17,6 +16,7 @@ export const Pmodall = styled.p`
 export const PSubb = styled.p`
     text-align:center;
 `
+
 
 const CadastroForm = () => {
   const {
@@ -33,14 +33,43 @@ const CadastroForm = () => {
   const [showEmailError, setShowEmailError] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+
   const checkForDuplicateData = async (data) => {
     try {
       const response = await fetch("http://localhost:5000/logins");
       const users = await response.json();
-
       return users.some((user) => user.email === data.email);
     } catch (error) {
       console.error("Erro ao verificar duplicatas na API:", error);
+      return false;
+    }
+  };
+
+  const saveDataToLocalStorage = (data) => {
+    const userData = JSON.parse(localStorage.getItem("userData")) || [];
+    userData.push(data);
+    localStorage.setItem("userData", JSON.stringify(userData));
+  };
+
+  const saveDataToApi = async (data) => {
+    try {
+      const response = await fetch("http://localhost:5000/logins", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.status === 201) {
+        // Successful API call
+        return true;
+      } else {
+        console.error("Erro ao cadastrar o usuário na API.");
+        return false;
+      }
+    } catch (error) {
+      console.error("Erro ao cadastrar o usuário na API:", error);
       return false;
     }
   };
@@ -50,43 +79,29 @@ const CadastroForm = () => {
       setDuplicateData(true);
       setShowEmailError(true);
     } else {
-      try {
-        const response = await fetch("http://localhost:5000/logins", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
+      // Save data to the API
+      const apiSuccess = await saveDataToApi(data);
+
+      if (apiSuccess) {
+        // Save data to localStorage
+        saveDataToLocalStorage(data);
+
+        reset({
+          name: "",
+          email: "",
+          password: "",
+          passwordConfirmation: "",
         });
-  
-        if (response.status === 201) {
-          const userData = JSON.parse(localStorage.getItem("userData")) || [];
-          userData.push(data);
-          localStorage.setItem("userData", JSON.stringify(userData));
-  
-          reset({
-            name: "",
-            email: "",
-            password: "",
-            passwordConfirmation: "",
-          });
-  
-          setShowModal(true); // Show the success modal
-        } else {
-          console.error("Erro ao cadastrar o usuário na API.");
-        }
-      } catch (error) {
-        console.error("Erro ao cadastrar o usuário na API:", error);
+
+        setShowModal(true); // Show the success modal
       }
     }
   };
-  
-  
 
   const hideModal = () => {
     setShowModal(false);
     setTimeout(() => {
-        navigate("/login")
+      navigate("/login");
     }, 2000);
   };
 
