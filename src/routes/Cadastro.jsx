@@ -42,6 +42,7 @@ const CadastroForm = () => {
     } catch (error) {
       console.error("Erro ao verificar duplicatas na API:", error);
       return false;
+      
     }
   };
 
