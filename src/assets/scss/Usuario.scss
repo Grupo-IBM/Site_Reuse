@@ -117,6 +117,27 @@
    
 }
 
+
+@media (max-width: 768px) {
+    .user-container .pin-box{
+        width: 90%;
+        height: 955px;
+        margin-left: 9px;
+        ;
+        .pin-number{
+            width: 70%;
+            font-size: 40px;   
+        }
+        h2{
+            font-size: 3rem;
+            font-family:var(--font-family);
+            font-weight: 700;
+            color: rgba(53, 82, 20, 1);
+            line-height: 2.344rem;
+        }
+    }
+  }
+
 @media (max-width:390px){
     .user-container{
         display: flex;

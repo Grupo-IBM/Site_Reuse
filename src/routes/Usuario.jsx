@@ -30,8 +30,7 @@ export default function Usuario(){
                                 <div style={{ minHeight: '150px' }}>
                                 <Collapse in={open}>
                                     <div id="example-collapse-text">
-                                    <p>12/02/2023 - São Paulo, SP | Unidade 35
-                                         10Kg Totais despejados - 4233pts
+                                    <p>12/02/2023 - São Paulo, SP | Unidade 35 - 10kg despejados
                                     </p>
                                     </div>
                                 </Collapse>
