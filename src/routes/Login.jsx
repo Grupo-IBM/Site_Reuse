@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Modal ,Button} from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../assets/scss/LoginForm.scss"
+import "../assets/scss/LoginForm.scss";
 
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Pmodal = styled.p`
-    font-size:25px;
-    color:#355214;
-    text-align:center;
-`
+  font-size: 25px;
+  color: #355214;
+  text-align: center;
+`;
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -20,22 +20,22 @@ export default function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/logins")
-      .then((response) => response.json())
-      .then((data) => {
-        const user = data.find((user) => user.email === email && user.password === password);
+    const userData = JSON.parse(localStorage.getItem("userData")) || [];
+    const user = userData.find(
+      (user) => user.email === email && user.password === password
+    );
 
-        if (user) {
-            setShowModal(true)
-        } else {
-          alert("Autenticação falhou. Verifique suas credenciais.");
-        }
-      });
+    if (user) {
+      setShowModal(true);
+    } else {
+      alert("Autenticação falhou. Verifique suas credenciais.");
+    }
   };
+
   const hideModal = () => {
     setShowModal(false);
     setTimeout(() => {
-        navigate("/usuario")
+      navigate("/usuario");
     }, 2000);
   };
 
@@ -70,7 +70,11 @@ export default function LoginPage() {
 
               <div className="form-control">
                 <button type="submit">Fazer Login</button>
-                <p><Link to="/cadastro" className="LinkBack">Voltar ao cadastro</Link></p>
+                <p>
+                  <Link to="/cadastro" className="LinkBack">
+                    Voltar ao cadastro
+                  </Link>
+                </p>
               </div>
             </form>
           </div>
@@ -81,15 +85,16 @@ export default function LoginPage() {
           <Modal.Title>Bem Vindo</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Pmodal>Seja Bem vindo a reUse, é um prazer em  tê-lo  conosco</Pmodal>
+          <Pmodal>
+            Seja Bem vindo a reUse, é um prazer tê-lo conosco
+          </Pmodal>
         </Modal.Body>
         <Modal.Footer>
-        <Button variant="secondary" onClick={hideModal}>
+          <Button variant="secondary" onClick={hideModal}>
             Fechar
           </Button>
         </Modal.Footer>
       </Modal>
     </div>
-    
   );
 }

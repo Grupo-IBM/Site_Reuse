@@ -34,7 +34,6 @@ const CadastroForm = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    // Check for duplicate email in localStorage
     const userData = JSON.parse(localStorage.getItem("userData")) || [];
     const duplicateUser = userData.find((user) => user.email === data.email);
 
@@ -51,7 +50,7 @@ const CadastroForm = () => {
         passwordConfirmation: "",
       });
 
-      setShowModal(true); // Show the success modal
+      setShowModal(true);
     }
   };
 
