@@ -17,6 +17,7 @@ export const Pmodall = styled.p`
 export const PSubb = styled.p`
     text-align:center;
 `
+
 const CadastroForm = () => {
   const {
     register,
@@ -194,7 +195,7 @@ const CadastroForm = () => {
         </div>
       </div>
 
-      <Modal show={showModal} onHide={hideModal}>
+      <Modal show={showModal} onHide={hideModal}  backdrop="static">
         <Modal.Header closeButton>
           <Modal.Title>Cadastro Concluído</Modal.Title>
         </Modal.Header>
