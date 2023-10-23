@@ -19,8 +19,6 @@ export default function Usuario(){
             console.error("Erro ao buscar os dados do usuário na API:", error);
         }
     };
-
-    // Busca os dados do usuário quando o componente é montado
     useEffect(() => {
         fetchUserData();
     }, []);
