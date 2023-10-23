@@ -1,23 +1,21 @@
 import "./Cabecalho.scss"
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo-cyberwave.png"
+import logo from "../../assets/img/logo-cyberwave.png"
 export default function Cabecalho(){
     return (
         <>
             <header>
                 <div className="cabeca">
                     <nav className="navbar-items">
-                        <img src={logo}/>
+                        <Link to="/">
+                            <img src={logo}/>
+                        </Link>
                         <ul>
                             <li className="Lista-navbar">
-                                <a>
                                     <Link to="/cadastro" className="Link">Cadastro</Link>
-                                </a>
                             </li>
                             <li>
-                                <a>
                                     <Link to="/login" className="estilo-entrar" >Login</Link>
-                                </a>
                             </li>
                         </ul>
                     </nav>
