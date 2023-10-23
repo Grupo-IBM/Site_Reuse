@@ -1,9 +1,28 @@
-import '../assets/scss/Usuario.scss'
+import { useEffect } from "react";
 import cupom from '../assets/img/cupom.png'
 import Collapse from 'react-bootstrap/Collapse';
+import "../assets/scss/Usuario.scss"
 import { useState } from 'react';
 export default function Usuario(){
     const [open, setOpen] = useState(false);
+    const [user, setUser] = useState(null);
+
+    // Função para buscar os dados do usuário na API
+    const fetchUserData = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/logins");
+            const users = await response.json();
+            const user = users[users.length - 1];
+
+            setUser(user);
+        } catch (error) {
+            console.error("Erro ao buscar os dados do usuário na API:", error);
+        }
+    };
+    useEffect(() => {
+        fetchUserData();
+    }, []);
+
     return(
         <>
             <main className='container-main'>
@@ -16,10 +35,12 @@ export default function Usuario(){
                         <section className="pin">
                             <div className="pin-box">
                                 <h2>Seu pin é: </h2>
-                                <div className='pin-number'>
-                                    12345
-                                </div>
-                                <h3 className='H3-PIN'>Seu histórico de deposíto: </h3>
+                                {user && (
+                                    <div className='pin-number'>
+                                        {user.pin}
+                                    </div>
+                                )}
+                            <h3 className='H3-PIN'>Seu histórico de deposíto: </h3>
                                 <div className='info'>
                                 <p>01/02/2023 - São Paulo, SP | Unidade 35
                                 6Kg totais despejados -  1236pts</p>
@@ -36,7 +57,7 @@ export default function Usuario(){
                                     </div>
                                 </Collapse>
                                 </div>
-                                </div>
+                            </div>
                             </div>
                         </section>
                     </div>

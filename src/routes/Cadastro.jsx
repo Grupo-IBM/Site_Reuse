@@ -42,6 +42,7 @@ const CadastroForm = () => {
     } catch (error) {
       console.error("Erro ao verificar duplicatas na API:", error);
       return false;
+      
     }
   };
 
@@ -51,6 +52,8 @@ const CadastroForm = () => {
       setShowEmailError(true);
     } else {
       try {
+        const pin = Math.floor(10000 + Math.random() * 90000);
+        data.pin = pin;
         const response = await fetch("http://localhost:5000/logins", {
           method: "POST",
           headers: {
@@ -71,7 +74,7 @@ const CadastroForm = () => {
             passwordConfirmation: "",
           });
   
-          setShowModal(true); // Show the success modal
+          setShowModal(true); 
         } else {
           console.error("Erro ao cadastrar o usuário na API.");
         }
