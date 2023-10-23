@@ -32,6 +32,8 @@ export default function Usuario(){
                                     <div id="example-collapse-text">
                                     <p>12/02/2023 - São Paulo, SP | Unidade 35 - 10kg despejados
                                     </p>
+                                    <p>25/02/2023 - São Paulo, SP | Unidade 35 - 14kg despejados
+                                    </p>
                                     </div>
                                 </Collapse>
                                 </div>
