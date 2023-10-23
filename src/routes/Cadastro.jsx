@@ -1,22 +1,22 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { isEmail } from "validator";
-import { Modal ,Button} from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/scss/CadastroForm.scss";
 
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Pmodall = styled.p`
-    font-size:25px;
-    color:#355214;
-    text-align:center;
-`
+  font-size: 25px;
+  color: #355214;
+  text-align: center;
+`;
 
 export const PSubb = styled.p`
-    text-align:center;
-`
+  text-align: center;
+`;
 
 const CadastroForm = () => {
   const {
@@ -29,64 +29,36 @@ const CadastroForm = () => {
 
   const watchPassword = watch("password");
 
-  const [duplicateData, setDuplicateData] = useState(false);
   const [showEmailError, setShowEmailError] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
-  const checkForDuplicateData = async (data) => {
-    try {
-      const response = await fetch("http://localhost:5000/logins");
-      const users = await response.json();
 
-      return users.some((user) => user.email === data.email);
-    } catch (error) {
-      console.error("Erro ao verificar duplicatas na API:", error);
-      return false;
-    }
-  };
+  const onSubmit = (data) => {
+    // Check for duplicate email in localStorage
+    const userData = JSON.parse(localStorage.getItem("userData")) || [];
+    const duplicateUser = userData.find((user) => user.email === data.email);
 
-  const onSubmit = async (data) => {
-    if (await checkForDuplicateData(data)) {
-      setDuplicateData(true);
+    if (duplicateUser) {
       setShowEmailError(true);
     } else {
-      try {
-        const response = await fetch("http://localhost:5000/logins", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
-  
-        if (response.status === 201) {
-          const userData = JSON.parse(localStorage.getItem("userData")) || [];
-          userData.push(data);
-          localStorage.setItem("userData", JSON.stringify(userData));
-  
-          reset({
-            name: "",
-            email: "",
-            password: "",
-            passwordConfirmation: "",
-          });
-  
-          setShowModal(true); // Show the success modal
-        } else {
-          console.error("Erro ao cadastrar o usuário na API.");
-        }
-      } catch (error) {
-        console.error("Erro ao cadastrar o usuário na API:", error);
-      }
+      userData.push(data);
+      localStorage.setItem("userData", JSON.stringify(userData));
+
+      reset({
+        name: "",
+        email: "",
+        password: "",
+        passwordConfirmation: "",
+      });
+
+      setShowModal(true); // Show the success modal
     }
   };
-  
-  
 
   const hideModal = () => {
     setShowModal(false);
     setTimeout(() => {
-        navigate("/login")
+      navigate("/login");
     }, 2000);
   };
 
@@ -103,7 +75,7 @@ const CadastroForm = () => {
           </div>
           <div className="form">
             <div className="app-container">
-              {duplicateData && showEmailError && (
+              {showEmailError && (
                 <p className="error-message">Já existe um cadastro com este e-mail.</p>
               )}
               <div className="form-control">
@@ -137,10 +109,6 @@ const CadastroForm = () => {
 
                 {errors?.email?.type === "validate" && (
                   <p className="error-message">Email inválido</p>
-                )}
-
-                {showEmailError && (
-                  <p className="error-message">Já existe um cadastro com este e-mail.</p>
                 )}
               </div>
 
@@ -187,24 +155,27 @@ const CadastroForm = () => {
               </div>
               <div className="form-control">
                 <button onClick={handleSubmit(onSubmit)}>Criar conta</button>
-                <p><Link to="/" className="LinkBack">Voltar a home</Link></p>
-
+                <p>
+                  <Link to="/" className="LinkBack">
+                    Voltar à página inicial
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <Modal show={showModal} onHide={hideModal}  backdrop="static">
+      <Modal show={showModal} onHide={hideModal} backdrop="static">
         <Modal.Header closeButton>
           <Modal.Title>Cadastro Concluído</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Pmodall>Seu cadastro foi realizado com sucesso.</Pmodall>
-          <PSubb>Você será direcionado para área de login!</PSubb>
+          <PSubb>Você será direcionado para a área de login!</PSubb>
         </Modal.Body>
         <Modal.Footer>
-        <Button variant="secondary" onClick={hideModal}>
+          <Button variant="secondary" onClick={hideModal}>
             Fechar
           </Button>
         </Modal.Footer>
