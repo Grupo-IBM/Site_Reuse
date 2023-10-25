@@ -40,3 +40,14 @@ Prontinho, caso esteja tudo certo o terminal ira mostrar uma mensagem com o link
         |-- routes\ ➡️ pasta com as paginas finais do projeto
           
  
+Integrantes:
+
+Emanuele Soares RM97973 - ESPG
+
+Enzo Shiotuqui RM555108 - ESPG
+
+Murilo Roveri RM97893 - ESPG
+
+Ricardo Neto RM550757 - ESPG
+
+Victória Pizza RM550609 - ESPG
