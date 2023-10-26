@@ -22,11 +22,11 @@ Ao instalar as duas ferramentas, você já está apto a seguir com a instalaçã
 
 4. Com a pasta "node-modules" criada basta rodar o projeto com o seguinte comando
 ```
-npm run dev
+npm run start:x
 ```
 este comando roda apenas o site, porém agora é preciso rodar a API, que carrega os dados, para isso basta executar
 ```
-npm run x
+npm run start:api
 ```    
 Prontinho, caso esteja tudo certo o terminal ira mostrar uma mensagem com o link, basta acessar e desfrutar do site :)
 
