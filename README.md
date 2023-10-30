@@ -1,5 +1,5 @@
 # Site reUse - Cyber Wave
-Esse repositório contém o projeto da cyberwave, o site da reUse, site esse que foca num futuro limpo para todos
+Esse repositório contém o projeto da CyberWave, o site da reUse, site esse que foca num futuro limpo para todos
 
 ## Como Iniciar:
 Para iniciar o projeto é importante que tenham as seguintes ferramentas instaladas
@@ -43,11 +43,7 @@ Prontinho, caso esteja tudo certo o terminal ira mostrar uma mensagem com o link
 Integrantes:
 
 Emanuele Soares RM97973 - ESPG
-
 Enzo Shiotuqui RM555108 - ESPG
-
 Murilo Roveri RM97893 - ESPG
-
 Ricardo Neto RM550757 - ESPG
-
 Victória Pizza RM550609 - ESPG
