@@ -12,10 +12,6 @@ export default function Rodape(){
           img: Linkedin,
           nome: '@Reuse'
         },
-        {
-          img: Linkedin,
-          nome: '@CyberWave'
-        }
       ];
     
     return(
@@ -23,10 +19,8 @@ export default function Rodape(){
             <div className="tudo">
                 <footer>
                     <div className="footer-container">
-                        <div  className="mapa">
-                            <img src={mapa} alt="Mapa"/>
-                        </div>
                         <div className="redes"> 
+                        <h2>Siga nas redes</h2>
                             <ul>
                                 {list.map((rede,i)=>(
                                     <li key={i}>
@@ -37,8 +31,8 @@ export default function Rodape(){
                             </ul>
                         </div>
                         <div className="contato">
-                            <p>©reUse™ - Uma iniciativa CyberWave. <br/>
-                                2023, todos os direitos reservados. <br/>
+                            <p>©reUse™ - Uma iniciativa CyberWave. 
+                                2023, todos os direitos reservados. 
                                 00+ 00 0000-0000 <br/>
                                 Av. Paulista, 1106 - 7º andar - Bela Vista, São Paulo - SP, 01311-000 <br/>
                             Compromisso com a Sustentabilidade: Reduzindo, Reutilizando e Reciclando para um Futuro Melhor.

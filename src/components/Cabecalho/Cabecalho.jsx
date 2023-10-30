@@ -11,6 +11,9 @@ export default function Cabecalho(){
                             <img src={logo}/>
                         </Link>
                         <ul>
+                            <li>
+                                <Link to="/sobre" className="Link">Sobre nós</Link>
+                            </li>
                             <li className="Lista-navbar">
                                     <Link to="/cadastro" className="Link">Cadastro</Link>
                             </li>

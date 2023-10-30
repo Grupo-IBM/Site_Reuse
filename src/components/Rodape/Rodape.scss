@@ -2,7 +2,7 @@
 
 .footer-container{
 width: 100%;
-display: grid;
+display: flex;
 grid-template-columns: repeat(3, 1fr);
 gap:50px;
 justify-content: space-around;
@@ -23,6 +23,10 @@ border-top: 3px solid var(--green-dark)
     margin-top: 22px;
     list-style: none;
     line-height: 90px;
+    h2{
+      color: var(--green-dark);
+      font-size: 42px;
+    }
 }
 .redes a{
     text-decoration: none;
@@ -45,12 +49,11 @@ border-top: 3px solid var(--green-dark)
 
 
 .contato p{
-    margin-top: 25px;
     color: var(--green-dark);
-    line-height: 60px;
-    text-align: center;
-    margin-right: 10px;
-    font-size: 20px;
+    line-height: 65px;
+    text-align:center;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 
