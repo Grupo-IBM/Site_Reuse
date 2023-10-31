@@ -88,6 +88,13 @@ border-top: 3px solid var(--green-dark)
     
     .redes{
       margin: 0 auto;
+      ul{
+        display: flex;
+        justify-content: space-around;
+        a{
+          display: none;
+        }
+      }
     }
 
     .contato{

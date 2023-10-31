@@ -8,11 +8,10 @@ export default function Cabecalho(){
                 <div className="cabeca">
                     <nav className="navbar-items">
                         <Link to="/">
-                            <img src={logo}/>
+                            <img src={logo} className="logo"/>
                         </Link>
                         <ul>
                             <li>
-                                <Link to="/sobre" className="Link">Sobre nós</Link>
                             </li>
                             <li className="Lista-navbar">
                                     <Link to="/cadastro" className="Link">Cadastro</Link>
