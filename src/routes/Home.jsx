@@ -2,7 +2,7 @@ import styled from "styled-components"
 import fundo from "../assets/img/home-fundo.png"
 import reuse from '../assets/img/reuse-logo 1.png'
 import "../assets/scss/Corpo.scss"
-
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
 background-image: url(${fundo});
@@ -21,6 +21,11 @@ export default function Home(){
                             <img src={reuse} alt="Logo da Reuse" className='Logo'/>
                         </div>
                         <p>Reciclar: a pequena ação que gera ondas gigantes de mudança para o nosso mundo</p>
+                        <Link to="/sobre" className="Link">
+                        <button className="btn-about">
+                            Caso queira saber quem somos<br></br>clique aqui 
+                        </button>
+                        </Link>
                     </Container>
                 </main>
             </div>
