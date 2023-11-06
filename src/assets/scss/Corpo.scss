@@ -1,33 +1,49 @@
 .main-banner p{
-    color: #FFF;
-    align-items: center;
-    text-align: center;
-    font-weight: bold;
-    text-shadow: #000 2px 2px 2px;
-    font-size: 32px
+  color: #FFF;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: #000 2px 2px 2px;
+  font-size: 32px
+}
+.logo-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  height: 100%;
+}
+.Logo {
+  max-width: 100%; 
+}  
+
+.btn-about{
+ background-color: var(--green-light);
+ margin: 0 auto;
+ display: flex;
+ padding: 14px;
+ border: none;
+ border-radius: 10px;
+ color: var(--black);
+ font-size: 24px;
+ box-shadow: #000 1px 2px 2px 2px;
+ transition: .5s ;
+}
+.btn-about:hover{
+  color: var(--white);
+  background-color: var(--green-hover);
+}
+@media (max-width: 900px) {
+  .main-banner p {
+    padding: 0 6rem;
+  }
 }
 
-.logo-container {
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    height: 100%;
+/* celular 576px */
+@media (max-width: 576px) {
+  .main-banner p {
+    padding: 0 2rem;
   }
-  .Logo {
-    max-width: 100%; 
-  }  
-  @media (max-width: 900px) {
-    .main-banner p {
-      padding: 0 6rem;
+  .container {
+      overflow-x: hidden;
     }
-  }
-
-  /* celular 576px */
-  @media (max-width: 576px) {
-    .main-banner p {
-      padding: 0 2rem;
-    }
-    .container {
-        overflow-x: hidden;
-      }
-  }
+}
