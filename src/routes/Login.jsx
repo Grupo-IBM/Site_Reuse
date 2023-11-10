@@ -49,7 +49,7 @@ export default function LoginPage() {
           <div className="app-container">
             <form onSubmit={handleSubmit}>
               <div className="form-control">
-                <label>E-mail</label>
+                <label>E-mail:</label>
                 <input
                   type="email"
                   placeholder="Seu Email"
@@ -59,7 +59,7 @@ export default function LoginPage() {
               </div>
 
               <div className="form-control">
-                <label>Senha</label>
+                <label>Senha:</label>
                 <input
                   type="password"
                   placeholder="Senha"
