@@ -110,7 +110,7 @@ const CadastroForm = () => {
                 <p className="error-message">Já existe um cadastro com este e-mail.</p>
               )}
               <div className="form-control">
-                <label>Nome</label>
+                <label>Nome:</label>
                 <input
                   className={errors?.name && "input-error"}
                   type="text"
@@ -123,7 +123,7 @@ const CadastroForm = () => {
               </div>
 
               <div className="form-control">
-                <label>E-mail</label>
+                <label>E-mail:</label>
                 <input
                   className={errors?.email && "input-error"}
                   type="email"
@@ -148,7 +148,7 @@ const CadastroForm = () => {
               </div>
 
               <div className="form-control">
-                <label>Senha</label>
+                <label>Senha:</label>
                 <input
                   className={errors?.password && "input-error"}
                   type="password"
@@ -168,7 +168,7 @@ const CadastroForm = () => {
               </div>
 
               <div className="form-control">
-                <label>Confirmação de senha</label>
+                <label>Confirmação de senha:</label>
                 <input
                   className={errors?.passwordConfirmation && "input-error"}
                   type="password"
